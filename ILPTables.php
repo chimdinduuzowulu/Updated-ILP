@@ -46,9 +46,26 @@ CourseId INT(6),
 FOREIGN KEY (CourseId) REFERENCES Course(CourseId),
 reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
+// 
+
+$ql5 = "CREATE TABLE IF NOT EXISTS LecturerVerify (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Fname VARCHAR (30), 
+Lname VARCHAR (30),
+phone VARCHAR (30),
+LecturerEmailId VARCHAR (30),
+profileImage VARCHAR(30),
+GradeId VARCHAR (30),
+pass VARCHAR (30),
+CourseTaught VARCHAR (30),
+Qualifications VARCHAR (255),
+CourseId INT(6), 
+FOREIGN KEY (CourseId) REFERENCES Course(CourseId),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
 
 
-if(mysqli_query($conn, $ql1)===TRUE && mysqli_query($conn, $ql2)===TRUE && mysqli_query($conn, $ql3)===TRUE && mysqli_query($conn, $ql4)===TRUE ) {
+if(mysqli_query($conn, $ql1)===TRUE && mysqli_query($conn, $ql2)===TRUE && mysqli_query($conn, $ql3)===TRUE && mysqli_query($conn, $ql4)===TRUE && mysqli_query($conn, $ql5)===TRUE) {
           echo("");
        }
 
